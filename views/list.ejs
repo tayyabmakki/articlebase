@@ -1,0 +1,27 @@
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">Articles</li>
+    <li class="breadcrumb-item active"><a href="/article/add">Add (to add more click here)</a></li>
+</ol>
+<h1 class="display-4">Articles</h1>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th>Title</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% articles.forEach(function(article){ %>
+            <tr>
+                <td><%= article.id %></td>
+                <td><%= article.title %></td>
+                <td>
+                    <a href="/article/edit/<%= article.id %>" class="btn btn-primary">Edit</a>
+                    <a onclick="return confirm('Are you sure?')" href="/article/delete/<%= article.id %>" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>
